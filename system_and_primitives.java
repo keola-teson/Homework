@@ -24,7 +24,7 @@ public class Systems_and_Primitives {
 		System.out.println(" ");
 		
 	
-		//task 3: White adaptable code to print out the C and A of a circle
+		//task 3: Write adaptable code to print out the C and A of a circle
 		final double pi = 3.1519;
 		double rad = 4.0;
 		double circ = 2 * pi * rad;
