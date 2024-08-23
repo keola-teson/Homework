@@ -30,8 +30,8 @@ public class Systems_and_Primitives {
 		double circ = 2 * pi * rad;
 		double expo = rad * rad;
 		double area = pi * expo;
-		System.out.println(circ);
-		System.out.println(area);
+		System.out.println("Circumference: " + circ);
+		System.out.println("Area: " + area);
 		System.out.println(" ");
 		
 		
