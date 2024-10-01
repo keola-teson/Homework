@@ -35,5 +35,15 @@ public String makeTags(String tag, String word)
 }
 
 /*
-
+Task 4:
+Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
+firstHalf("WooHoo") → "Woo"
+firstHalf("HelloThere") → "Hello"
+firstHalf("abcdef") → "abc"
 */
+public String firstHalf(String str)
+{
+  int lengthOfString = str.length();
+  int stringDivTwo = lengthOfString / 2;
+  return str.substring(0, stringDivTwo);
+}
