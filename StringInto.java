@@ -11,12 +11,24 @@ public class StringIntro
 		//make an object to read what you inoput
 		String myInput = new String(myReader.next());
 		
+		//make a variable to calculate the input length of the user input
+		int inputLength = myInput.length();
+		//if statement to check if the length of the input is larger than 6
+		if (inputLength <= 6)
+		{
+			//asks user to input a longer String
+			System.out.print("This is not the amount of characters I wanted in your String.");
+			System.out.println(" Make it longer than 6 characters.");
+		}
+		//else statement for if the length of the input is larger than 6
+		else
+		{
 		//prints all the methods in this class
 		printSecondAndLastLetter(myInput);
 		System.out.println(findTheE(myInput));
 		System.out.println(getLength(myInput));
 		printFirstAndLastThree(myInput);
-		
+		}
 		//close scanner
 		myReader.close();
 	}
@@ -60,8 +72,8 @@ public class StringIntro
 	 * @return the string length
 	 */
 	public static String getLength(String input)
-	{
-		//returns the length of the string
+	{	
+		//returns the length of the inputted string
 		return "The length of your string is: " + input.length();
 	}
 	
