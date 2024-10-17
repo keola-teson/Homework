@@ -9,12 +9,24 @@ public class StringIntro
 		System.out.println("Input a string: ");
 		
 		//make an object to read what you inoput
-		String myInput = new String(myReader.next());
+		String myInput = new String(myReader.nextLine());
 		
 		//make a variable to calculate the input length of the user input
 		int inputLength = myInput.length();
-		//if statement to check if the length of the input is larger than 6
-		if (inputLength <= 6)
+		//if statement to check if the String inputted is the name of someone I know
+		if (myInput.equalsIgnoreCase("Daniel") || myInput.equalsIgnoreCase("Ella")
+				|| myInput.equalsIgnoreCase("Amber") || myInput.equalsIgnoreCase("Trauger"))
+		{
+			//prints all the methods in this class
+			printSecondAndLastLetter(myInput);
+			System.out.println(findTheE(myInput));
+			System.out.println(getLength(myInput));
+			printFirstAndLastThree(myInput);
+			//easter egg
+			System.out.println(forPeopleIKnow(myInput));
+		}
+		//else if statement to check if the input is more than 6 characters
+		else if (inputLength <= 6)
 		{
 			//asks user to input a longer String
 			System.out.print("This is not the amount of characters I wanted in your String.");
@@ -92,5 +104,26 @@ public class StringIntro
 		//prints the two string objects out.
 		System.out.println("The first three letters of your string is: " + firstInputSubstring);
 		System.out.println("The last three letters of your string is: " + secondInputSubstring);
+	}
+	
+	public static String forPeopleIKnow(String name)
+	{
+		if (name.equalsIgnoreCase("Daniel"))
+		{
+			return "Hello Daniel. Stop snooping in my code.";
+		}
+		if (name.equalsIgnoreCase("Ella"))
+		{
+			return "Hello Ella. Lyzelle is mine.";
+		}
+		if (name.equalsIgnoreCase("Amber"))
+		{
+			return "Hello Amber. I didn't do anything this time fo sho.";
+		}
+		if (name.equalsIgnoreCase("Trauger"))
+		{
+			return "Can I get extra credit on this please :)";
+		}
+		return "";
 	}
 }
