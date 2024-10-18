@@ -39,30 +39,11 @@ public int dateFashion(int you, int date)
 Task 3:
 */
 public boolean squirrelPlay(int temp, boolean isSummer) {
-  //if statement to check if isSummer is true
   if (isSummer == true)
   {
-    //if statement to check if temp is between 60 and 100 (inclusive)
-    if (temp >= 60 && temp <=100)
-    {
-      //returns true
-      return true;
-    }
-    //else statement if check was false
-    else
-    {
-      //returns false
-      return false;
-    }
+    return temp < 60 || temp > 100? false: true;
   }
-  //if statement to check if temp is between 60 and 90 (inclusive)
-  if (temp >= 60 && temp <= 90)
-  {
-    //returns true
-    return true;
-  }
-  //returns false if every other check was false
-  return false;
+  return temp < 60 || temp > 90? false : true;
 }
 
 /**
