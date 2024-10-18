@@ -3,9 +3,9 @@ Task 1:
 */
 public boolean cigarParty(int cigars, boolean isWeekend)
 {
-if (isWeekend == true)
+	if (isWeekend == true)
 	{
-	  return (cigars >= 40? true: false);
+	  return cigars >= 40? true: false;
 	}
 	if (cigars < 40 || cigars > 60)
 	{
@@ -13,6 +13,7 @@ if (isWeekend == true)
 	}
 	return true;
 }
+
 
 /**
 Task 2: 
