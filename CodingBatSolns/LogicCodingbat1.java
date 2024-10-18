@@ -3,32 +3,16 @@ Task 1:
 */
 public boolean cigarParty(int cigars, boolean isWeekend)
 {
-  //if statement to check if isWeekend is true
 	if (isWeekend == true)
-  {
-    //if statement to check if cigar is greater than 40
-	  if (cigars >= 40)
-		{
-      //returns true
-			return true;
-		}
-    //else statment for any other scenario
-		else
-	  {
-      //returns false
-		  return false;
-	  }
-	}
-  //else if statement for if isWeekend is false. checks if cigars is between 40 and 60 (inclusive)
-  else if (cigars >= 40 && cigars <= 60)
 	{
-    //returns true
-		return true;
+	  return (cigars >= 40? true: false);
 	}
-  //returns false is every check is false
-	return false;
+	if (cigars < 40 || cigars > 60)
+	{
+	  return false;
+	}
+	return true;
 }
-
 
 /**
 Task 2: 
