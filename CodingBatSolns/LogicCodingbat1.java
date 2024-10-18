@@ -3,15 +3,15 @@ Task 1:
 */
 public boolean cigarParty(int cigars, boolean isWeekend)
 {
-	if (isWeekend == true)
-	{
-	  return cigars >= 40? true: false;
-	}
-	if (cigars < 40 || cigars > 60)
-	{
-	  return false;
-	}
-	return true;
+  if (isWeekend == true)
+  {
+    return cigars >= 40? true: false;
+  }
+  if (cigars < 40 || cigars > 60)
+  {
+    return false;
+  }
+  return true;
 }
 
 
