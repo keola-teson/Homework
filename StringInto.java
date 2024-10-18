@@ -16,7 +16,6 @@ public class StringIntro
 		//make an object to read what you inoput
 		String myInput = new String(myReader.nextLine());
 		
-		
 		/*
 		 * tests if the input is a desired length or word
 		 * if the input is someone i sit with in compsci or mr trauger, print all the methods below
