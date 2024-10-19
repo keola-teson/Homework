@@ -1,14 +1,17 @@
 /**
 Task 1:
 */
-public String makeOutWord(String out, String word) {
-  return out.substring(0,2) + word + out.substring(2);
+public String makeOutWord(String out, String word)
+{
+  int outLengthHalf = out.length() / 2;
+  return out.substring(0, outLengthHalf) + word + out.substring(outLengthHalf);
 }
 
 /**
 Task 2:
 */
-public String extraEnd(String str) {
+public String extraEnd(String str)
+{
 	String lastTwoLetters = str.substring(str.length() - 2);
   return lastTwoLetters + lastTwoLetters + lastTwoLetters;
 }
@@ -16,13 +19,15 @@ public String extraEnd(String str) {
 /**
 Task 3:
 */
-public String firstTwo(String str) {
+public String firstTwo(String str)
+{
   return str.length() <= 2? str : str.substring(0,2);
 }
 
 /**
 Task 4:
 */
-public String withoutEnd(String str) {
+public String withoutEnd(String str)
+{
   return str.substring(1, str.length() - 1);
 }
