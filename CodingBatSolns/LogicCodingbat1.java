@@ -34,7 +34,8 @@ public int dateFashion(int you, int date)
 /**
 Task 3:
 */
-public boolean squirrelPlay(int temp, boolean isSummer) {
+public boolean squirrelPlay(int temp, boolean isSummer)
+{
   if (isSummer == true)
   {
     return temp < 60 || temp > 100? false: true;
@@ -45,7 +46,8 @@ public boolean squirrelPlay(int temp, boolean isSummer) {
 /**
 Task 4:
 */
-public int caughtSpeeding(int speed, boolean isBirthday) {
+public int caughtSpeeding(int speed, boolean isBirthday)
+{
   if (isBirthday == true && speed > 65)
   {
     return speed <= 85? 1 : 2;
