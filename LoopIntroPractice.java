@@ -1,7 +1,7 @@
 public class LoopIntroPractice
 }
 
-  /**
+  	/**
 	 * Counts the amount of times a passed char shows up in a word
 	 * @param str (String input)
 	 * @param let (char input)
