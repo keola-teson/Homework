@@ -30,7 +30,7 @@ public class LoopIntroPractice
 	}
 	
 
-  /**
+  	/**
 	 * Multiplies the number passed by n - 1
 	 * @param num (int input)
 	 * @return the factorial solution of num
