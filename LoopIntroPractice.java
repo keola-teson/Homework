@@ -58,12 +58,12 @@ public class LoopIntroPractice
 		for (int i = 0; i < str.length(); i++)
 		{
 			/*
-			 * checks if the character the loop is on is the last character
+			 * checks if i has the same value as the last index of the string
 			 * - breaks the loop if true
 			 * checks if the character the is no is the same as the one next to it by added 1 to i
 			 * - returns true and breaks the loop if true
 			 */
-			if (str.charAt(i) == str.charAt(str.length() - 1))
+			if (i == str.length() - 1)
 			{
 				break;
 			}
