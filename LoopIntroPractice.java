@@ -1,7 +1,15 @@
-public class LoopIntroPractice
-}
 
-  	/**
+public class LoopIntroPractice
+{
+
+	public static void main(String[] args)
+	{
+		System.out.println(countLetters("abqcdqefghqqijk", 'q'));
+		System.out.println(getFactorial(5));
+		System.out.println(printIfRepeats("abcde"));
+	}
+	
+	/**
 	 * Counts the amount of times a passed char shows up in a word
 	 * @param str (String input)
 	 * @param let (char input)
@@ -29,8 +37,7 @@ public class LoopIntroPractice
 		return count;
 	}
 	
-
-  	/**
+	/**
 	 * Multiplies the number passed by n - 1
 	 * @param num (int input)
 	 * @return the factorial solution of num
@@ -55,18 +62,12 @@ public class LoopIntroPractice
 	private static boolean printIfRepeats(String str)
 	{
 		//loops through the length of the inputted string
-		for (int i = 0; i < str.length(); i++)
+		for (int i = 0; i < str.length() - 1; i++)
 		{
 			/*
-			 * checks if i has the same value as the last index of the string
-			 * - breaks the loop if true
-			 * checks if the character the is no is the same as the one next to it by added 1 to i
+			 * checks if the character i is the same as the one next to it by added 1 to i
 			 * - returns true and breaks the loop if true
 			 */
-			if (i == str.length() - 1)
-			{
-				break;
-			}
 			if (str.charAt(i) == str.charAt(i + 1))
 			{
 				return true;
