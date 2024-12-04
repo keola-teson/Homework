@@ -1,4 +1,4 @@
-//assume circle object and scanner were instantiated elsewhere
+//assume scanner was instantiated elsewhere
 
 /**
  * This method checks for if the user inputted stop and stops the loop
@@ -50,6 +50,9 @@ public static void stopMe()
  */
 public static void changeRadius()
 {
+	//circle object with radius value 4.0
+	Circle circle = new Circle(4.0);
+	
 	//declares a double with the value of the circle object's radius
 	double circleRadius = circle.getRadius();
 	/*
