@@ -112,7 +112,7 @@ public class Array2DSorting
 	}
 	
 	/**
-	 * sorts the passed 2D array column by column using insertion sort
+	 * sorts the passed 2D array column by column using bubble sort
 	 * @param array2D
 	 */
 	public static void sortColumn(double[][] array2D)
