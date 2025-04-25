@@ -1,12 +1,9 @@
-package work;
-
-import java.util.Arrays;
 
 public class Array2DSorting
 {
 	public static void main(String[] args)
 	{
-		double[][] array2D = createRandomArray(5, 5, 20, 1);
+		double[][] array2D = createRandomArray(3, 3, 9, 1);
 		print(array2D);
 		System.out.println();
 		
@@ -16,8 +13,7 @@ public class Array2DSorting
 		
 		sortColumn(array2D);
 		print(array2D);
-		
-		Arrays.toString(array2D);
+		System.out.println();
 	}
 	
 	/**
@@ -35,7 +31,7 @@ public class Array2DSorting
 		/* generates a random number, moves the decimal point 2 numbers, truncates the number, moves the decimal back */
 		for (int i = 0; i < array2D.length; i++)
 			for (int j = 0; j < array2D[i].length; j++)
-				array2D[i][j] = Math.floor((Math.random() * maximum + minimum) * 100) / 100;
+				array2D[i][j] = Math.floor((Math.random() * maximum + minimum) * 10) / 10;
 		
 		return array2D;
 	}
@@ -63,20 +59,53 @@ public class Array2DSorting
 	}
 	
 	/**
-	 * sorts the passed 2D array row by row using insertion sort
+	 * swaps two items in a 2D array
+	 * @param array2D - array for swapping
+	 * @param array1 - array you want to swap in
+	 * @param array2 - array you want to swap in
+	 * @param index1 - elem you want to swap
+	 * @param index2 - elem you want to swap
+	 */
+	private static void swap(double[][] array2D, int array1, int array2, int index1, int index2)
+	{
+		double temp = array2D[array1][index1];
+		array2D[array1][index1] = array2D[array2][index2];
+		array2D[array2][index2] = temp;
+	}
+	
+	/**
+	 * sorts the passed 2D array row by row using bubble sort
 	 * @param array2D
 	 */
 	public static void sortRow(double[][] array2D)
 	{
-		for (int r = 0; r < array2D.length; r++) // to move through each row ( used r for less confusion )
+		boolean sorted = false;
+		while (!sorted) // loops until array is sorted
 		{
-			for (int i = 1; i < array2D[r].length; i++)
+			sorted = true;
+			
+			for (int row = 0; row < array2D.length; row++) // increments rows when current column is fully storted
 			{
-				for (int j = i; j > 0 && array2D[r][j] < array2D[r][j - 1]; j--) // swaps until number hits correct position
+				int rowCurrent = row; // stores the current iterations of row ( changes later )
+				
+				for (int column = 0; column < array2D[0].length; column++)
 				{
-					double temp = array2D[r][j];
-					array2D[r][j] = array2D[r][j - 1];
-					array2D[r][j - 1] = temp;
+					int rowChange = rowCurrent; // stored for change later
+					
+					int colChange = column + 1; // stored for error check 
+					if (colChange == array2D[0].length && rowChange + 1 < array2D.length) // moves rowChange to next row
+					{
+						rowChange++;
+						colChange = 0;
+					}
+					
+					/* swaps if the current item is bigger than the next item */
+					if (colChange < array2D[0].length && array2D[rowCurrent][column] > array2D[rowChange][colChange])
+					{
+						swap(array2D, rowCurrent, rowChange, column, colChange);
+						sorted = false;
+					}
+					rowCurrent = rowChange; // changed in case the iteration was moved to the next row
 				}
 			}
 		}
@@ -88,15 +117,33 @@ public class Array2DSorting
 	 */
 	public static void sortColumn(double[][] array2D)
 	{
-		for (int c = 0; c < array2D[0].length; c++) // to move through each column ( used c for less confusion )
+		boolean sorted = false;
+		while (!sorted) // loops until array is sorted
 		{
-			for (int i = 1; i < array2D.length; i++)
+			sorted = true;
+			
+			for (int column = 0; column < array2D[0].length; column++) // increments column when current row is fully storted
 			{
-				for (int j = i; j > 0 && array2D[j][c] < array2D[j - 1][c]; j--) // swaps until number hit correct position
+				int colCurrent = column; // stores the current iterations of column ( changes later )
+				
+				for (int row = 0; row < array2D.length; row++)
 				{
-					double temp = array2D[j][c];
-					array2D[j][c] = array2D[j - 1][c];
-					array2D[j - 1][c] = temp;
+					int colChange = colCurrent; // stored for change later
+					
+					int rowChange = row + 1; // stored for error check 
+					if (rowChange == array2D.length && colChange + 1 < array2D[0].length) // moves colChange to next column
+					{
+						colChange++;
+						rowChange = 0;
+					}
+					
+					/* swaps if the current item is bigger than the next item */
+					if (rowChange < array2D.length && array2D[row][colCurrent] > array2D[rowChange][colChange])
+					{
+						swap(array2D, row, rowChange, colCurrent, colChange);
+						sorted = false;
+					}
+					colCurrent = colChange; // changed in case the iteration was moved to the next column
 				}
 			}
 		}
